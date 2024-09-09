@@ -5,6 +5,7 @@ __author__ = "730461441"
 
 def main_planner(guests: int) -> None:
     """entrypoint of program"""
+    print("A Cozy Tea Party for " + str(guests) + " People!")
     print(
         "Tea Bags: " + str(tea_bags(people=guests))
     )  # have to change function outputs to strings when printing
@@ -24,7 +25,9 @@ def tea_bags(people: int) -> int:
 
 def treats(people: int) -> int:
     """Returns number of treats for tea drinkers"""
-    return int(tea_bags(people) * 1.5)
+    return int(
+        tea_bags(people=people) * 1.5
+    )  # have to set people equal to something in return statement, even if it equals itself
 
 
 def cost(tea_count: int, treat_count: int) -> float:
