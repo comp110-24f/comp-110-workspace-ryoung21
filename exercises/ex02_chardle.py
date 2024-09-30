@@ -12,7 +12,7 @@ def input_word() -> str:
     if len(five_char_word) == 5:  # to check that character entered is 5 characters
         return five_char_word
     else:
-        print("Error: Word must contain 5 characters")
+        print("Error: Word must contain 5 characters.")
         exit()
 
 
@@ -33,13 +33,13 @@ def contains_char(word: str, letter: str) -> None:
         word
     ):  # to repeat loop until all indexes of word have been examined
         if letter == word[index]:
-            print(letter + " found at index ", index)
+            print(letter + " found at index", index)
             count += 1
         index += 1
     if count == 1:  # use if, elif, else to print count number with correct tenses
-        print(count, " instance of " + letter + " found in " + word)
+        print(count, "instance of " + letter + " found in " + word)
     elif count > 1:
-        print(count, " instances of " + letter + " found in " + word)
+        print(count, "instances of " + letter + " found in " + word)
     else:
         print("No instances of " + letter + " found in " + word)
 
