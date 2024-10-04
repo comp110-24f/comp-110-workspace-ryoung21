@@ -7,13 +7,15 @@ def main(secret: str) -> None:
     """The entrypoint of the program and main game loop."""
     turn: int = 1
     while turn <= 6:
-        user_guess: str = input_guess(5)
         print(f"=== Turn {turn}/6 ===")
+        user_guess: str = input_guess(
+            5
+        )  # place this inside loop to prompt for new input each turn
         print(emojified(user_guess, secret))
-        if user_guess == secret:
+        if user_guess == secret:  # check for win
             print(f"You won in {turn}/6 turns!")
-            exit()
-        if turn == 6 and user_guess != secret:
+            return None
+        if turn == 6:
             print("X/6 - Sorry, try again tomorrow!")
         turn += 1
 
@@ -23,7 +25,7 @@ def input_guess(secret_word_len: int) -> str:
     secret_word_guess = input(f"Enter a {secret_word_len} character word: ")
     while len(secret_word_guess) != secret_word_len:
         secret_word_guess = input(f"That wasn't {secret_word_len} chars! Try again.")
-    return secret_word_guess
+    return secret_word_guess  # don't forget return statement!
 
 
 def contains_char(secret_word: str, char_guess: str) -> bool:
@@ -47,7 +49,7 @@ def emojified(word_guess: str, sec_word: str) -> str:
     emoji: str = ""
     while index < len(sec_word):
         if word_guess[index] == sec_word[index]:
-            emoji += GREEN_BOX
+            emoji += GREEN_BOX  # use += to add emoji to string
         elif contains_char(sec_word, word_guess[index]) == True:
             emoji += YELLOW_BOX
         else:
