@@ -59,4 +59,4 @@ def emojified(word_guess: str, sec_word: str) -> str:
 
 
 if __name__ == "__main__":
-    main(secret="codes")
+    main(secret="wiggy")
